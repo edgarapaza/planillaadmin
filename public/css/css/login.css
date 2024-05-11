@@ -1,0 +1,36 @@
+body{
+    background-image: url("https://simulacromtc.com/wp-content/uploads/MTC-Puno.jpg");
+    background-size: cover; /* Hace que la imagen cubra todo el div */
+    background-position: center; /* Centra la imagen en el div */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    display: flex; /* Utiliza Flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 100vh; /* Establece la altura del body al 100% de la ventana */
+    margin: 0; /* Elimina el margen predeterminado */
+}
+.login-z{
+    opacity: 0.9;
+    height: 75vh;
+}
+.info-z{
+    background-image: url("");
+    font-weight: bold;
+    display: flex; /* Utiliza Flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+.formulario-z{
+    display: flex; /* Utiliza Flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+.formulario-z .login{
+    width: 100%;
+    height: 50%;
+    max-width: 350px;
+    min-height: 400px;
+}
+.button{
+    border-radius: 45px;
+}
