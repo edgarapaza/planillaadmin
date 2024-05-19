@@ -24,9 +24,10 @@ class Login extends Controller
 		}
 		$validar = $this->model->Validar($user);
 		if(password_verify($pass, $validar['passwd'])){
-			if($validar['chkusu'] == 0 && $validar['nivusu'] == 0 ){
+			if($validar['chkusu'] == 0 || $validar['nivusu'] == 0 ){
 				$this->view->mensaje = 'Este usuario no se encuentra activo';
-				$this->view->render('login/index');
+				header('location:'.constant('URL'));
+				return;
 			}
 			$_SESSION['katari'] = 'katariSoftware';
 			$_SESSION['username'] = $validar['usuario'];

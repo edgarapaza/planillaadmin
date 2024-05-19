@@ -1,9 +1,10 @@
 $(document).ready(function() {
+    var host = "localhost";
     // OBTENER TABLAS
     // TABLA LOGIN
     $.ajax({
         type: "Get",
-        url: "http://localhost/planillaadmin/tablas/getLogin",
+        url: `http://${host}/planillaadmin/tablas/getLogin`,
         success: function (response) {
             let data = JSON.parse(response);
             let html = '';
@@ -19,9 +20,9 @@ $(document).ready(function() {
                     <td>${estado}</td>
                     <td>${element.fecha}</td>
                     <td>
-                    <a href="http://localhost/planillaadmin/tablas/renderEdit/${element.id}" class="button success">Editar</a>
+                    <a href="http://${host}/planillaadmin/tablas/renderEdit/${element.id}" class="button success">Editar</a>
                     </td>
-                    <td><a href="http://localhost/planillaadmin/tablas/deleteLogin/${element.id}" class="button alert">Eliminar</a></td>
+                    <td><a href="http://${host}/planillaadmin/tablas/deleteLogin/${element.id}" class="button alert">Eliminar</a></td>
                 </tr>
                     `
             });
@@ -31,8 +32,9 @@ $(document).ready(function() {
     // TABLA PERSONAL
     $.ajax({
         type: "Get",
-        url: "http://localhost/planillaadmin/tablas/getPersonal",
+        url: `http://${host}/planillaadmin/tablas/getPersonal`,
         success: function (response) {
+            console.log(response);
             let data = JSON.parse(response);
             let html = '';
             data.forEach(element => {

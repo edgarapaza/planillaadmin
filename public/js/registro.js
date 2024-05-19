@@ -1,7 +1,8 @@
+var host = "localhost";
 $(document).ready(function() {
     $.ajax({
         type: "Get",
-        url: "http://localhost/planillaadmin/registro/sinLogin",
+        url: `http://${host}/planillaadmin/registro/sinLogin`,
         data: "data",
         success: function (response) {
             let data = JSON.parse(response);
