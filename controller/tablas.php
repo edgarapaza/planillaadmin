@@ -57,7 +57,13 @@ class Tablas extends Controller
         $id = $_POST['idlogin'];
         $usuario = $_POST['usuario'];
         // $password = $_POST['password'];
-        $nivel = $_POST['nivel']=='admin' ? 1 : 0;
+        if($_POST['nivel']=='admin'){
+            $nivel= 1;
+        }else if($_POST['nivel']=='personal'){
+            $nivel= 0;
+        }else if($_POST['nivel']=='viewer'){
+            $nivel= 2;
+        }
         $estado = $_POST['estado']=='activo' ? 1 : 0;
 
         $password = password_hash($_POST['password'], PASSWORD_BCRYPT);

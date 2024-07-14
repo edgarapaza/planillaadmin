@@ -28,7 +28,7 @@ class Conexion
       $this->conn->query($sql);
       $res = TRUE;
     } catch (Exception $e) {
-      echo 'Excepción: ',  $e->getMessage();
+      //echo 'Excepción: ',  $e->getMessage();
       $res = FALSE;
     }
 
@@ -42,7 +42,7 @@ class Conexion
     try {
       $result = $this->conn->query($sql);
     } catch (Exception $e) {
-      echo 'Excepción: ',  $e->getMessage();
+      //echo 'Excepción: ',  $e->getMessage();
     }
 
     return $result;
@@ -55,7 +55,7 @@ class Conexion
     try {
       $result = $this->conn->query($sql);
     } catch (Exception $e) {
-      echo 'Excepción: ',  $e->getMessage();
+      //echo 'Excepción: ',  $e->getMessage();
     }
 
     $data = $result->fetch_array(MYSQLI_ASSOC);

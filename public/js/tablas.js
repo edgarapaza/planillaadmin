@@ -9,7 +9,14 @@ $(document).ready(function() {
             let data = JSON.parse(response);
             let html = '';
             data.forEach(element => {
-                let nivel = element.nivusu == 1 ? 'Administrador' : 'Personal';
+                let nivel = "";
+                if(element.nivusu ==0){
+                    nivel = "Personal";
+                }else if(element.nivusu ==1){
+                    nivel = "Administrador";
+                }else if(element.nivusu ==2){
+                    nivel = "Visitante";
+                }
                 let estado = element.estado == 1 ? 'Activo' : 'Inactivo';
                 html += `
                 <tr>

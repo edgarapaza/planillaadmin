@@ -15,18 +15,27 @@ class Registro extends Controller
         if(!empty($_POST['usuario']) && !empty($_POST['password']) && !empty($_POST['nivel']) && ($_POST['password']== $_POST['password2'])){
             $usuario = $_POST['usuario'];
             $id = $_POST['personal'];
-            // 1 == admin, 0 == personal
-            $nivel= $_POST['nivel']=='admin' ? 1 : 0;
+            // 1 == admin, 0 == personal, 2==viewer
             if($this->model->admin()['total']==0){
                 $nivel = 1;
+            }else if($_POST['nivel']=='admin'){
+                $nivel= 1;
+            }else if($_POST['nivel']=='personal'){
+                $nivel= 0;
+            }else if($_POST['nivel']=='viewer'){
+                $nivel= 2;
             }
             $pass = password_hash($_POST['password'], PASSWORD_BCRYPT);
-            if($this->model->Create($id, $usuario, $pass, $nivel)){
-                $this->view->mensaje = "Se ha registrado con exito";
-                $this->view->Render('main/index');
-            }else{
-                $this->view->mensaje = "Error al insertar a la base de datos";
-                $this->render();
+            try{
+                if($this->model->Create($id, $usuario, $pass, $nivel)){
+                    $this->view->mensaje = "Se ha registrado con exito";
+                    $this->view->Render('tablas/index');
+                }else{
+                    $this->view->mensaje = "Primero llene datos del personal";
+                    $this->view->Render('personal/index');
+                }
+            }catch(Exception $e){
+                $this->view->Render('personal/index');
             }
         }else{
             $this->view->mensaje = "Faltan datos o no coinciden las contraseñas";

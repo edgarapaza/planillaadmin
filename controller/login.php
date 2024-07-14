@@ -24,7 +24,7 @@ class Login extends Controller
 		}
 		$validar = $this->model->Validar($user);
 		if(password_verify($pass, $validar['passwd'])){
-			if($validar['chkusu'] == 0 || $validar['nivusu'] == 0 ){
+			if($validar['chkusu'] == 0 || $validar['nivusu'] == 0 || $validar['nivusu'] == 2){
 				$this->view->mensaje = 'Este usuario no se encuentra activo';
 				header('location:'.constant('URL'));
 				return;

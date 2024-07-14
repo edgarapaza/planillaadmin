@@ -18,6 +18,7 @@
         <label for="nivel" id="nivel">Nivel</label>
         <select name="nivel" id="nivel">
           <option value="personal">Personal</option>
+          <option value="viewer">Visitante</option>
           <option value="admin">Administrador</option>
         </select>
         <input type="submit" value="Ingresar" class="button success" />

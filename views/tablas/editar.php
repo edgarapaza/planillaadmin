@@ -15,6 +15,7 @@
                 <select name="nivel" id="nivel">
                     <option value="admin" <?php echo isset($this->data['nivusu']) && $this->data['nivusu'] == 1 ? 'selected' : '' ?>>Administrador</option>
                     <option value="personal" <?php echo isset($this->data['nivusu']) && $this->data['nivusu'] == 0 ? 'selected' : '' ?>>Personal</option>
+                    <option value="viewer" <?php echo isset($this->data['nivusu']) && $this->data['nivusu'] == 2 ? 'selected' : '' ?>>Visitante</option>
                 </select>
                 <label for="nivel" id="nivel">Estado</label>
                 <select name="estado" id="nivel">
