@@ -1,6 +1,6 @@
 <?php
 class Tablas extends Controller
-{
+{ 
     function __construct(){
         parent::__construct();
     }
@@ -65,8 +65,11 @@ class Tablas extends Controller
             $nivel= 2;
         }
         $estado = $_POST['estado']=='activo' ? 1 : 0;
-
-        $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+        if($_POST['password']==''){
+            $password = '';
+        }else{
+            $password = password_hash($_POST['password'], PASSWORD_BCRYPT);   
+        }
         if($this->model->update($id,$usuario,$password,$nivel,$estado)){
             $this->render();
         }else{

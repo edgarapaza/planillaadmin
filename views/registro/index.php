@@ -5,16 +5,16 @@
       <h2>Registro de usuarios <br> <?php echo $this->mensaje; ?></h2>
       <h3>Ministerio de Transportes y Comunicaciones</h3>
       <form action="<?php echo constant('URL'); ?>registro/create" method="POST">
-          <label for="personal">Personal</label>
-          <select name="personal" id="personal">
-            <option value="1">1</option>
-          </select>
+        <label for="personal">Personal</label>
+        <select name="personal" id="personal">
+          <option value="1">1</option>
+        </select>
         <label for="usuario">Usuario</label>
-        <input type="text" name="usuario" id="usuario" />
+        <input type="text" name="usuario" id="usuario" minlength="2"/>
         <label for="password">Contraseña</label>
-        <input type="password" name="password" id="password" />
+        <input type="password" name="password" id="password" minlength="4"/>
         <label for="password2">Repetir Contraseña</label>
-        <input type="password" name="password2" id="password2" />
+        <input type="password" name="password2" id="password2" minlength="4"/>
         <label for="nivel" id="nivel">Nivel</label>
         <select name="nivel" id="nivel">
           <option value="personal">Personal</option>
@@ -25,7 +25,7 @@
       </form>
     </div>
   </div>
-<script src="<?php echo constant('URL'); ?>public/js/registro.js"></script>
+  <script src="<?php echo constant('URL'); ?>public/js/registro.js"></script>
 
 </div>
 <?php require ('views/footer.php'); ?>

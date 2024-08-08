@@ -14,9 +14,10 @@
     <!-- Foundation prototipe-algunas interesantes opciones a utilizar-->
     <link rel="stylesheet" href="<?php echo constant('URL') . 'public/css/foundation-prototype.css' ?>">
 
-    <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/footer.css">
+    <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/css/header.css">
 
     <script src="<?php echo constant('URL'); ?>public/js/jquery.js"></script>
+    <script language="JavaScript" type="text/javascript" src="<?php echo constant('URL') ?>public/Assets/js/jpaginate.js"></script>
 
 
 </head>
@@ -31,17 +32,17 @@
         <div class="cell large-6">
             <div class="grid-x margin-top-1">
                 <div class="cell large-4 text-center">
-                    <p class="lead">
+                    <p class="lead underline-animate">
                         <a href="<?php echo constant('URL') ?>registro/render">Registrar Usuarios</a>
                     </p>
                 </div>
                 <div class="cell large-4 text-center">
-                    <p class="lead">
+                    <p class="lead underline-animate">
                         <a href="<?php echo constant('URL') ?>personal/render">Registrar Personal</a>
                     </p>
                 </div>
                 <div class="cell large-4 text-center">
-                    <p class="lead">
+                    <p class="lead underline-animate">
                         <a href="<?php echo constant('URL') ?>tablas/render">Ver Tablas</a>
                     </p>
                 </div>
@@ -49,8 +50,8 @@
         </div>
         <div class="cell large-3 margin-top-1">
             <div class="grid-x">
-                <div class="cell large-8" style="display:flex;">
-                    <p class="name-z">Bienvenido: <?php echo $_SESSION['username']; ?></p>
+                <div class="cell large-8 welcome">
+                    <p class="name-z wordwrap">Bienvenido: <?php echo $_SESSION['username']; ?></p>
                 </div>
                 <div class="cell large-4 text-center">
                     <a href="<?php echo constant('URL'); ?>login/logout" class="button salir">SALIR</a>

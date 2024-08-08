@@ -6,11 +6,11 @@
             <h3>Ministerio de Transportes y Comunicaciones</h3>
             <form action="<?php echo constant('URL'); ?>tablas/updateLogin" method="POST">
                 <label for="usuario">Usuario</label>
-                <input type="text" name="usuario" id="usuario" value="<?php echo $this->data['usuario']; ?>" />
+                <input type="text" name="usuario" id="usuario" value="<?php echo $this->data['usuario']; ?>" minlength="2"/>
                 <label for="pass">Contraseña</label>
                 <input type="password" name="pass" id="pass" value="<?php echo $this->data['passwd']; ?>" disabled/>
                 <label for="password">Nueva Contraseña</label>
-                <input type="password" name="password" id="password"/>
+                <input type="password" name="password" id="password" minlength="4"/>
                 <label for="nivel" id="nivel">Nivel</label>
                 <select name="nivel" id="nivel">
                     <option value="admin" <?php echo isset($this->data['nivusu']) && $this->data['nivusu'] == 1 ? 'selected' : '' ?>>Administrador</option>

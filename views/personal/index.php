@@ -7,9 +7,9 @@
       <h2>Ministerio de Transportes y Comunicaciones</h2>
       <form action="<?php echo constant('URL'); ?>personal/create" method="POST">
         <label for="nombre">Nombre</label>
-        <input type="text" name="nombre" id="nombre" />
+        <input type="text" name="nombre" id="nombre" minlength="2"/>
         <label for="apellido">Apellido</label>
-        <input type="text" name="apellido" id="apellido"/>
+        <input type="text" name="apellido" id="apellido" minlength="2"/>
         <label for="sexo">Sexo</label>
         <select name="sexo" id="sexo">
           <option value="masculino">masculino</option>

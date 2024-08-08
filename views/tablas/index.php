@@ -1,11 +1,12 @@
 <?php require ('views/header.php'); ?>
-<div class="grid-container">
+<link rel="stylesheet" href="<?php echo constant('URL') ?>public/Assets/css/jpaginate.css">
+<div class="grid-container full margin-1">
     <div class="grid-x">
-        <div class="cell">
-            <h1>Tablas</h1>
+        <div class="cell text-center">
+            <h1>Registros de Usuarios</h1>
         </div>
         <div class="cell">
-            <h2>Logins</h2>
+            <h2>Usuarios para iniciar sesion</h2>
             <table>
                 <thead>
                     <tr>
@@ -24,9 +25,10 @@
                     </tr>
                 </tbody>
             </table>
+            <div id="usuarios-paginacion"></div>
         </div>
         <div class="cell">
-            <h2>Personal</h2>
+            <h2>Personal Registrado</h2>
             <table>
                 <thead>
                     <tr>
@@ -43,6 +45,7 @@
                     </tr>
                 </tbody>
             </table>
+            <div id="personal-paginacion"></div>
         </div>
     </div>
     <script src="<?php echo constant('URL'); ?>public/js/tablas.js"></script>

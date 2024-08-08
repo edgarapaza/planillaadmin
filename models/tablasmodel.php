@@ -23,20 +23,24 @@ class TablasModel extends Model
   }
   public function deleteLogin($id)
   {
-    $sql = "DELETE FROM `mtc`.`login` WHERE (`idlogin` = '$id');";
+    $sql = "DELETE FROM `login` WHERE (`idlogin` = '$id');";
     $res = $this->conn->ConsultaSin($sql);
     return $res;
   }
   public function getLoginUnique($id)
   {
-    $sql = "SELECT * FROM `mtc`.`login` WHERE (`idlogin` = '$id');";
+    $sql = "SELECT * FROM `login` WHERE (`idlogin` = '$id');";
     $res = $this->conn->ConsultaArray($sql);
     return $res;
   }
-
   public function update($id,$usuario,$password,$nivel,$estado)
   {
-    $sql = "UPDATE `mtc`.`login` SET `usuario` = '$usuario', `passwd` = '$password', `nivusu` = '$nivel', `chkusu` = '$estado' WHERE (`idlogin` = '$id');";
+    if($password==''){
+      $pass= '';
+    }else{
+      $pass = "`passwd` = '$password',";
+    }
+    $sql = "UPDATE `login` SET `usuario` = '$usuario',". $pass ." `nivusu` = '$nivel', `chkusu` = '$estado' WHERE (`idlogin` = '$id');";
     $res = $this->conn->ConsultaSin($sql);
     return $res;
   }

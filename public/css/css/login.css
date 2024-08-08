@@ -34,3 +34,6 @@ body{
 .button{
     border-radius: 45px;
 }
+.title{
+    border-color: blue !important;
+}

@@ -21,16 +21,12 @@
     <div class="grid-x margin-3 login-z shadow">
       <div class="cell large-6 callout info-z">
         <div class="padding-horizontal-2">
-          <h1>Katari-Software y desarrollo</h1>
-
-
+          <div class="callout text-center rounded shadow title">
+            <h1>Katari-Software y Desarrollo</h1>
+          </div>
           <p class="lead">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi facilis suscipit, voluptates deserunt
-            sapiente pariatur hic velit itaque voluptate! Non quod dolorem aperiam nulla neque labore. Blanditiis magni
-            sapiente repudiandae?
+            Panel Administrativa, el usuario administrador puede registrar un nuevo personal y su usuario para que pueda ingresar al sistema de Planillas. 
           </p>
-
-
           <a href="" class="button">facebook</a>
           <a href="" class="button alert">Gmail</a>
         </div>
@@ -38,34 +34,23 @@
       <div class="cell large-6 callout formulario-z">
         <div class="login">
           <div class="margin-1">
-            <h2>Login</h2>
+            <div class="callout text-center rounded shadow title">
+              <h2>Login</h2>
+            </div>
           </div>
           <form action="<?php echo constant('URL'); ?>login/user" method="POST">
             <label for="usuario">Usuario</label>
-            <input type="text" name="usuario" id="usuario" value="zeta" required/>
+            <input type="text" name="usuario" id="usuario" required/>
             <label for="password">Contraseña</label>
-            <input type="password" name="password" id="password" value="zeta" required/>
-            <input type="submit" value="Ingresar" class="button success" />
+            <input type="password" name="password" id="password" required/>
+            <div class="text-center">
+              <input type="submit" value="Ingresar" class="button success" /> 
+            </div>
           </form>
         </div>
       </div>
     </div>
   </div>
-  <!-- <div class="grid-container">
-    <div class="grid-x margin-3">
-      <div class="cell callout shadow margin-top-3">
-        <h1>Ministerio de Transportes y Comunicaciones</h1>
-        <h2><?php echo $this->mensaje; ?></h2>
-        <form action="<?php echo constant('URL'); ?>login/user" method="POST">
-          <label for="usuario">Usuario</label>
-          <input type="text" name="usuario" id="usuario" value="zeta"/>
-          <label for="password">Contraseña</label>
-          <input type="password" name="password" id="password" value="zeta"/>
-          <input type="submit" value="Ingresar" class="button success"/>
-        </form>
-      </div>
-    </div>
-  </div> -->
 </body>
 
 </html>
